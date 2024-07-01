@@ -1,6 +1,7 @@
 ﻿using CommandLine;
 using Humanizer;
 using System.Diagnostics;
+using WordFinderConsole.Helpers;
 
 namespace WordFinderConsole
 {
@@ -39,21 +40,30 @@ namespace WordFinderConsole
                     stopwatch.Start();
 
                     var finder = new WordFinderLib.WordFinder(characterLines);
-                    var wordResults = finder.Find(wordsToFind);
+                    var wordResults = finder.Find(wordsToFind).ToList();
 
                     stopwatch.Stop();
 
                     Console.WriteLine($"Elapsed time {stopwatch.Elapsed.TotalMilliseconds} ms");
-                    Console.WriteLine($"Those are the top 10 most repeated words: {wordResults.Humanize()}");
+                    Console.WriteLine(
+                        $"These are the top {wordResults.Count} most repeated words: {wordResults.Humanize()}");
+                    Console.WriteLine("Printing matrix with highlighted words...");
+
+                    Console.WriteLine("");
+
+                    WordHighlighter.PrintMatrixWithHighlightedWords(characterLines.ToList(), wordResults);
+
+                    Console.WriteLine("");
 
                     Console.WriteLine("Thanks for using the word finder tool. Press a key to exit.");
+
                     Console.ReadLine();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(
-                        $"One of the following files does not exist {characterMatrixFile} or {wordsFile}. Please provide a valid file for each one.");
+                        $"One of the following files does not exist {characterMatrixFile} or {wordsFile}. Please provide existing files.");
                     Console.ResetColor();
                 }
             }

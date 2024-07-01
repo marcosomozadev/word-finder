@@ -16,7 +16,7 @@ Word search can find words from left to right or from top to bottom on a 2D char
 Used `HashSet` to remove duplicate words and `Dictionary<string, int>` to store the word occurences found. Since, the comparisons needed are from left to right and top to bottom,  decided to convert the matrix into a list of character sequences to be able to compare the vertical sequences as horizontal sequences. Used `string.IndexOf` to compare each instance of a word on a given character sequence.
 
 ### Run
-`WordFinderConsole` is the console app project to execute the WordFinder library methods.
+`WordFinderConsole` is a console app to execute the WordFinder library methods and highlight the found words.
 To run the application, use the following command lines arguments:
 
     .\WordFinderConsole -m <matrix-file-path> -w <words-file-path>
