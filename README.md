@@ -21,6 +21,8 @@ To run the application, use the following command lines arguments:
 
     .\WordFinderConsole -m <matrix-file-path> -w <words-file-path>
 
+![image](https://github.com/marcosomozadev/word-finder/assets/167639051/eda2870e-b9ca-4ab1-82cb-0c86721faa6c)
+
 The following files are included and used for debug launch configs:
 
 * `matrix.txt` contains a 5x5 character matrix used in combination with `words.txt` that  contains a 4 comma seperated word list.
