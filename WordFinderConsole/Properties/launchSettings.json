@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "WordFinderConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "-m ./Files/matrix.txt -w ./Files/words.txt"
+    },
+    "WordFInder64x64": {
+      "commandName": "Project",
+      "commandLineArgs": "-m ./Files/matrix64x64.txt -w ./Files/words64x64.txt"
+    }
+  }
+}
